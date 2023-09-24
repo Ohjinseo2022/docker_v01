@@ -5,8 +5,7 @@ FROM base AS deps
 
 
 RUN apk add --no-cache libc6-compat
-#참조할 디렉토리 
-WORKDIR /src/app   
+WORKDIR /app   
 
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
