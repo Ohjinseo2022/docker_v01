@@ -64,4 +64,4 @@ ENV PORT 3000
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
-ENTRYPOINT ['node',"server.js"]
+ENTRYPOINT ["node","server.js"]
