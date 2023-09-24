@@ -1,6 +1,9 @@
-FROM node:16-alpine as
-ARG profile=build
-#
+FROM node:16-alpine AS base
+
+# Install dependencies only when needed
+FROM base AS deps
+
+
 RUN apk add --no-cache libc6-compat
 #참조할 디렉토리 
 WORKDIR /src/app   
@@ -26,7 +29,7 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN yarn build
+RUN npm build
 
 # If using npm comment out above and use below instead
 # RUN npm run build
